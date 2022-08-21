@@ -50,6 +50,7 @@ function CreateListing() {
 	} = formData;
 
 	const auth = getAuth();
+	// console.log(process.env.REACT_APP_GEOCODE_API_KEY);
 	const navigate = useNavigate();
 	const isMountedRef = useRef(true);
 
@@ -88,6 +89,7 @@ function CreateListing() {
 
 		let geolocation = {};
 		let location = {};
+
 		if (geoLocationEnabled) {
 			const res = await fetch(
 				`https://maps.googleapis.com/maps/api/geocode/json?address=${address}&key=${process.env.REACT_APP_GEOCODE_API_KEY}`
